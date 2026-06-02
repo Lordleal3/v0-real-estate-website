@@ -9,9 +9,7 @@ export function AboutSection() {
   const isInView = useInView(ref, { once: true, margin: "-100px" })
 
   const stats = [
-    { value: "100+", label: "Homes Sold" },
-    { value: "$50M+", label: "In Sales Volume" },
-    { value: "10+", label: "Years Experience" },
+    { value: "1+", label: "Years Experience" },
   ]
 
   return (
@@ -97,7 +95,7 @@ export function AboutSection() {
 
             {/* Stats */}
             <motion.div 
-              className="mt-12 grid grid-cols-3 gap-8 border-t border-border pt-12"
+              className="mt-12 flex justify-center border-t border-border pt-12"
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.8 }}
