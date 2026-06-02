@@ -1,7 +1,4 @@
-import { Resend } from "resend"
 import { NextResponse } from "next/server"
-
-const resend = new Resend(process.env.RESEND_API_KEY)
 
 export async function POST(request: Request) {
   try {
@@ -15,26 +12,23 @@ export async function POST(request: Request) {
       )
     }
 
-    // Send email to Jay
-    await resend.emails.send({
-      from: "Website Contact <onboarding@resend.dev>",
-      to: "jw.evans@kw.com",
-      subject: "NEW WEB client",
-      html: `
-        <h2>New Contact Form Submission</h2>
-        <p><strong>Name:</strong> ${name}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Phone:</strong> ${phone || "Not provided"}</p>
-        <p><strong>Message:</strong></p>
-        <p>${message}</p>
-      `,
-    })
+    // Build mailto URL for the client to open
+    const subject = encodeURIComponent("NEW WEB client")
+    const body = encodeURIComponent(
+      `New Contact Form Submission\n\n` +
+      `Name: ${name}\n` +
+      `Email: ${email}\n` +
+      `Phone: ${phone || "Not provided"}\n\n` +
+      `Message:\n${message}`
+    )
+    
+    const mailtoUrl = `mailto:jw.evans@kw.com?subject=${subject}&body=${body}`
 
-    return NextResponse.json({ success: true })
+    return NextResponse.json({ success: true, mailtoUrl })
   } catch (error) {
-    console.error("Error sending email:", error)
+    console.error("Error processing contact form:", error)
     return NextResponse.json(
-      { error: "Failed to send message" },
+      { error: "Failed to process message" },
       { status: 500 }
     )
   }
