@@ -30,7 +30,7 @@ export function AboutSection() {
                   <div className="mb-4 h-32 w-32 mx-auto rounded-full bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center">
                     <span className="text-5xl font-light text-primary">JE</span>
                   </div>
-                  <p className="text-sm tracking-[0.3em] text-muted-foreground">PORTRAIT</p>
+                  <p className="text-sm tracking-[0.3em] text-muted-foreground">PORTRAIT COMING SOON</p>
                 </div>
               </div>
             </div>
