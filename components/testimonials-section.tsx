@@ -6,18 +6,8 @@ import { useRef } from "react"
 const testimonials = [
   {
     quote: "Jay made our dream home a reality. His attention to detail and understanding of our needs was exceptional.",
-    author: "The Martinez Family",
-    location: "Malibu, CA",
-  },
-  {
-    quote: "Professional, knowledgeable, and genuinely invested in finding us the perfect property. Highly recommended.",
-    author: "David & Sarah Chen",
-    location: "Beverly Hills, CA",
-  },
-  {
-    quote: "Jay's expertise in the California luxury market is unmatched. He delivered beyond our expectations.",
-    author: "The Williams Estate",
-    location: "Newport Beach, CA",
+    author: "Marty Williams",
+    location: "Oakland, CA",
   },
 ]
 
@@ -56,7 +46,7 @@ export function TestimonialsSection() {
           </h2>
         </motion.div>
 
-        <div className="grid gap-8 md:grid-cols-3">
+        <div className="mx-auto max-w-2xl">
           {testimonials.map((testimonial, index) => (
             <motion.div
               key={index}
