@@ -9,6 +9,7 @@ export function ContactSection() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
   const [isSubmitted, setIsSubmitted] = useState(false)
+  const [isLoading, setIsLoading] = useState(false)
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -16,11 +17,28 @@ export function ContactSection() {
     message: "",
   })
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // In a real app, this would send to a backend
-    setIsSubmitted(true)
-    setTimeout(() => setIsSubmitted(false), 3000)
+    setIsLoading(true)
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      })
+
+      if (response.ok) {
+        setIsSubmitted(true)
+        setFormData({ name: "", email: "", phone: "", message: "" })
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error)
+    } finally {
+      setIsLoading(false)
+    }
   }
 
   const contactInfo = [
@@ -196,7 +214,7 @@ export function ContactSection() {
 
               <motion.button
                 type="submit"
-                disabled={isSubmitted}
+                disabled={isSubmitted || isLoading}
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 className="group flex w-full items-center justify-center gap-3 bg-primary py-4 text-sm tracking-[0.2em] text-primary-foreground transition-all duration-300 hover:bg-primary/90 disabled:opacity-70"
@@ -204,8 +222,10 @@ export function ContactSection() {
                 {isSubmitted ? (
                   <>
                     <CheckCircle className="h-5 w-5" />
-                    <span>MESSAGE SENT</span>
+                    <span>THANK YOU, JAY WILL BE IN CONTACT</span>
                   </>
+                ) : isLoading ? (
+                  <span>SENDING...</span>
                 ) : (
                   <>
                     <span>SEND MESSAGE</span>
