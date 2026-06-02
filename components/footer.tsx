@@ -37,7 +37,7 @@ export function Footer() {
               LICENSED WITH KELLER WILLIAMS REALTY
             </p>
             <p className="mt-2 text-xs text-muted-foreground/70">
-              DRE# XXXXXXXX
+              DRE# 02380962
             </p>
           </motion.div>
 
