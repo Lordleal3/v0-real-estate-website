@@ -143,8 +143,8 @@ export function ContactSection() {
             >
               <p className="mb-4 text-xs tracking-[0.2em] text-primary">AVAILABILITY</p>
               <div className="space-y-2 text-sm text-muted-foreground">
-                <p>Monday - Friday: 9:00 AM - 7:00 PM</p>
-                <p>Saturday: 10:00 AM - 5:00 PM</p>
+                <p>Monday - Friday: 8:00 AM - 6:00 PM</p>
+                <p>Saturday: 9:00 AM - 5:00 PM</p>
                 <p>Sunday: By Appointment</p>
               </div>
             </motion.div>
