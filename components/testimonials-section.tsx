@@ -9,6 +9,16 @@ const testimonials = [
     author: "Marty Williams",
     location: "Oakland, CA",
   },
+  {
+    quote: "From start to finish, Jay provided unparalleled service. His market knowledge and negotiation skills are truly impressive.",
+    author: "The Evans Family",
+    location: "Beverly Hills, CA",
+  },
+  {
+    quote: "Working with Jay was an absolute pleasure. He found us the perfect coastal property and made the entire process seamless.",
+    author: "The Carter Family",
+    location: "Newport Beach, CA",
+  },
 ]
 
 export function TestimonialsSection() {
