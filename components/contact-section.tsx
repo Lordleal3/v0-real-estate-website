@@ -168,7 +168,7 @@ export function ContactSection() {
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   className="w-full border-b border-border bg-transparent py-3 text-foreground outline-none transition-colors placeholder:text-muted-foreground/50 focus:border-primary"
-                  placeholder="Enter your name"
+                  placeholder="Enter name"
                 />
               </div>
 
@@ -183,7 +183,7 @@ export function ContactSection() {
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   className="w-full border-b border-border bg-transparent py-3 text-foreground outline-none transition-colors placeholder:text-muted-foreground/50 focus:border-primary"
-                  placeholder="Enter your email"
+                  placeholder="Enter email"
                 />
               </div>
 
@@ -198,7 +198,7 @@ export function ContactSection() {
                   value={formData.phone}
                   onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                   className="w-full border-b border-border bg-transparent py-3 text-foreground outline-none transition-colors placeholder:text-muted-foreground/50 focus:border-primary"
-                  placeholder="Enter your phone"
+                  placeholder="Enter phone"
                 />
               </div>
 
