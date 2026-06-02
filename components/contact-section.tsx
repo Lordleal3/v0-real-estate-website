@@ -194,10 +194,11 @@ export function ContactSection() {
                 <input
                   type="tel"
                   id="phone"
+                  required
                   value={formData.phone}
                   onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                   className="w-full border-b border-border bg-transparent py-3 text-foreground outline-none transition-colors placeholder:text-muted-foreground/50 focus:border-primary"
-                  placeholder="Enter your phone (optional)"
+                  placeholder="Enter your phone"
                 />
               </div>
 
