@@ -24,15 +24,11 @@ export function AboutSection() {
             className="relative"
           >
             <div className="relative aspect-[4/5] overflow-hidden">
-              <div className="h-full w-full bg-gradient-to-br from-secondary to-muted" />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-center">
-                  <div className="mb-4 h-32 w-32 mx-auto rounded-full bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center">
-                    <span className="text-5xl font-light text-primary">JE</span>
-                  </div>
-                  <p className="text-sm tracking-[0.3em] text-muted-foreground">PORTRAIT COMING SOON</p>
-                </div>
-              </div>
+              <img
+                src="/images/jay-evans-portrait.jpeg"
+                alt="Jaleal 'Jay' Evans, luxury real estate agent with Keller Williams Realty"
+                className="h-full w-full object-cover object-top"
+              />
             </div>
             
             {/* Decorative Element */}

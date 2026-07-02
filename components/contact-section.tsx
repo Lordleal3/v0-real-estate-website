@@ -30,11 +30,7 @@ export function ContactSection() {
         body: JSON.stringify(formData),
       })
 
-      const data = await response.json()
-
-      if (response.ok && data.mailtoUrl) {
-        // Open email client with pre-filled message
-        window.open(data.mailtoUrl, "_blank")
+      if (response.ok) {
         setIsSubmitted(true)
         setFormData({ name: "", email: "", phone: "", message: "" })
       }
